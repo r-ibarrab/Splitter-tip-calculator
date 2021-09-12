@@ -22,7 +22,7 @@
                     <h5>Bill</h5>
                     <div class="input-container">
                         <img src="images/icon-dollar.svg" alt="">
-                        <input type="text" onkeypress='return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)' >
+                        <input id="bill-input" onchange="handleChange(event)" placeholder="0.00" type="text" onkeypress='return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)' >
                     </div>
 
                 </div>
@@ -30,12 +30,12 @@
                 <div class="select-tip">
                     <h5>Select Tip</h5>
                     <div class="buttons-container">
-                        <span class="tip-button">5%</span>
-                        <span class="tip-button">10%</span>
-                        <span class="tip-button">15%</span>
-                        <span class="tip-button">25%</span>
-                        <span class="tip-button">50%</span>
-                        <div class="tip-button custom">Custom</div>
+                        <span class="tip-button" onclick="changePercentage(5)">5%</span>
+                        <span class="tip-button" onclick="changePercentage(10)">10%</span>
+                        <span class="tip-button" onclick="changePercentage(15)">15%</span>
+                        <span class="tip-button" onclick="changePercentage(25)">25%</span>
+                        <span class="tip-button" onclick="changePercentage(50)">50%</span>
+                        <div class="tip-button custom" onclick="customPercentage()">Custom</div>
                     </div>
 
                 </div>
@@ -44,7 +44,7 @@
                     <h5>Number of people</h5>
                     <div class="input-container">
                         <img src="images/icon-person.svg" alt="">
-                        <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                        <input id="number-of-people" type="text" value="1" onchange="changePeople(event)" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
                     </div>
 
                 </div>
@@ -73,7 +73,7 @@
     
                     </div>
                 </span>
-                <span class="reset-button">
+                <span class="reset-button" onclick="reset()">
                     RESET
                 </span>
 
@@ -82,5 +82,6 @@
         </div>
    </span>
     
+   <script src="app.js"></script>
 </body>
 </html>
